@@ -182,7 +182,7 @@ if command == 'pull-email':
         try:
             name = generate_tmp_name(ext='.bin')
             with open(name, 'wb') as f:
-                f.write(decrypt(base64.b64encode(o), enc_password))
+                f.write(decrypt(o, enc_password))
                 print(name)
         except Exception as e:
             print(e)
