@@ -168,8 +168,7 @@ for o, a in opts:
 
 if command == 'push-email':
     with open(filename, 'rb') as f:
-        data = base64.b64decode(encrypt(f.read(), enc_password))
-        
+        data = encrypt(base64.b64encode(f.read()).decode(), enc_password)        
     e = Mail(host)
     e.login(username, password)
     e.place(data)
